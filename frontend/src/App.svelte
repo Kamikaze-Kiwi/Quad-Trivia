@@ -11,7 +11,7 @@
     const formData = new FormData(form);
     const amount = formData.get("amount") as string;
 
-    fetch(`https://quad-trivia-api.onrender.com/questions?amount=${amount}`)
+    fetch(`/api/questions?amount=${amount}`)
       .then((response) => response.json())
       .then((data: Quiz) => {
         quiz = data;
@@ -21,7 +21,7 @@
   function submitAnswers() {
     console.log("Submitted answers:", givenAnswers);
 
-    fetch(`https://quad-trivia-api.onrender.com/api/checkanswers?cacheId=${quiz?.id}`, {
+    fetch(`/api/checkanswers?cacheId=${quiz?.id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
