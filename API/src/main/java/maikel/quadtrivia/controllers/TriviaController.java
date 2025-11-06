@@ -21,7 +21,7 @@ import maikel.quadtrivia.models.TriviaResponse;
 import maikel.quadtrivia.services.TriviaCacheService;
 import maikel.quadtrivia.services.TriviaService;
 
-@CrossOrigin(origins = "http://localhost:5137")
+@CrossOrigin
 @RestController
 public class TriviaController {
     @Autowired
